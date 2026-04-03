@@ -1,0 +1,18 @@
+.site-main > article  { margin-top: 45px; }
+
+
+.menu h5, .menu li.current-menu-item a, .menu li.current-post-ancestor a, .menu li a.active, .menu li a:hover {
+    color: #a67f07;
+}
+
+
+.submenu ul li { text-transform: uppercase; font-weight: 600; color: #a3793f; }
+.submenu ul li a:hover { color: #a3793f; }
+
+
+/*  --------  done  -------- */
+
+h2 {
+    /* color: #a47940; */
+    /* text-transform: uppercase; */
+}

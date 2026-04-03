@@ -1,0 +1,383 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+    
+
+    
+    <title>Амалия</title>
+
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    
+
+    
+    
+    <script type="text/javascript" src="js/queryloader2.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener('DOMContentLoaded', function() {
+          QueryLoader2(document.querySelector("body"), {
+              barColor: "#a67f07",
+              backgroundColor: "#fff",
+              percentage: true,
+              barHeight: 4,
+              minimumTime: 200,
+              fadeOutTime: 1000
+          });
+          document.querySelector("body").classList.add('ready')
+      });
+    </script>
+    
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    
+  </head>
+
+
+<body id="layout">
+    
+    <div class="top-bar">
+      
+      <div class="row">
+        <div class="medium-4 columns">
+          <div class="top-bar-left">
+            <ul class="menu">
+              <li class="menu-logo"><a class="link-anchor" href="#section-home"><img src="img/logo.png"/></a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <span id="responsive-menu-toggle" class="medium-offset-7">
+          <div class="top-bar-right toggler">
+            <button class="menu-icon dark" type="button"></button>
+          </div>
+        </span>
+        <div id="responsive-menu" class="medium-8 columns">
+          
+            <div class="top-bar-right">
+              <ul class="menu">
+                <li><a class="link-anchor" href="#section-concept">Концепция</a></li>
+                <li><a class="link-anchor" href="#section-book">Первая книга</a></li>
+                <li><a class="link-anchor" href="#section-we">Мы</a></li>
+                <li><a class="link-anchor" href="#section-library">Библиотека</a></li>
+              </ul>
+            </div>
+          
+        </div>
+        
+      </div>
+      
+      
+      
+    </div>
+
+
+
+
+
+<div id="mobile">
+<img id="m-amalia" class="m-flower" src="img/logo.png"/>
+<img id="m-first" class="m-flower" src="img/f1_1.png"/>
+<img id="m-red" class="m-flower" src="img/f2.png"/>
+<article id="m-menu">
+    <div class="medium-6 columns">
+<!--       <ul class="menu">
+        <li><a class="link-anchor" href="#section-concept">Концепция</a></li>
+        <li><a class="link-anchor" href="#section-book">Первая книга</a></li>
+        <li><a class="link-anchor" href="#section-we">Мы</a></li>
+        <li><a class="link-anchor" href="#section-library">Библиотека</a></li>
+      </ul> -->
+    </div>
+</article>
+<img id="m-book" id=class="m-flower" src="img/f3.png"/>
+<img id="m-gold" id=class="m-flower" src="img/f4.png"/>
+
+
+<section id="m-news" class="wide news-block" style="display: none;">
+    <div class="news-container text-left">
+        <div class="row">
+            <div class="medium-12 small-12 columns">
+                <h2>Новости</h2>
+            </div>
+            <div class="medium-12 small-12 columns">
+                <div class="row">
+                    
+                        <div class="medium-5 small-12 columns">
+                        <article class="post">
+                        <header>
+                            <a class="all-news-link" href="<?php the_permalink() ?>"><?php the_date();?></a>
+                        </header>
+                        <div class="post-body">
+                            <p>
+                              <b><?php the_title() ?></b>  
+                            </p>
+                            <p><?php the_content();?></p>
+                        </div>
+                        </article>
+                        </div>
+                    <div class="medium-12 small-12 columns">
+                        <header>
+                            <a class="all-news-link" href="#">Все новости</a>
+                        </header>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</div>
+
+<!--
+<div id="home"></div>
+<div id="concept"></div>
+<div id="book"></div>
+-->
+<div id="we"></div>
+<div id="library"></div>
+<div id="desktop">
+<!-- 
+    marker breakpoints start animations:
+    _bp-start-[id animatated element]-[type animation]
+    
+    100vh - screen height 100%
+    50vh - screen height 50%
+    -->
+<div id="_bp-start-amalia-pin" class="_breakpoint" style="top:calc(0);"></div>
+<div id="_bp-start-amalia-opacity" class="_breakpoint" style="top:calc(50vh);"></div>
+<div id="_bp-start-news-pin" class="_breakpoint" style="top:calc(200vh + 330px);"></div>
+<div id="_bp-start-red-pin" class="_breakpoint" style="top:calc(356vh + 300px);"></div>
+<div id="_bp-start-concept-pin" class="_breakpoint" style="top:calc(460vh + 64px);"></div>
+<div id="_bp-start-concept-menu-pin" class="_breakpoint" style="top:calc(510vh + 70px);"></div>
+<div id="_bp-start-book-pin" class="_breakpoint" style="top:calc(660vh + 720px);"></div> <!-- 750 + 750 -->
+<div id="_bp-start-book-title-pin" class="_breakpoint" style="top:calc(700vh + 650px);"></div>
+<div id="_bp-start-book-menu-pin" class="_breakpoint" style="top:calc(800vh + 650px);"></div>
+<!-- div id="_bp-start-book-title-top" class="_breakpoint" style="top:calc(9000vh + 650px);"></div -->
+
+<div id="_bp-start-gold-pin" class="_breakpoint" style="top:calc(1150vh + 900px);"></div><!--1050vh + 700-->
+<div id="_bp-start-white-pin" class="_breakpoint" style="top:calc(1170vh + 700px);"></div><!--1150vh + 700-->
+<div id="_bp-start-translations-pin" class="_breakpoint" style="top:calc(1200vh + 600px);"></div>
+<div id="_bp-start-translations-menu-pin" class="_breakpoint" style="top:calc(1250vh + 600px);"></div>
+
+<div id="_bp-start-gold2-pin" class="_breakpoint" style="top:calc(1650vh + 400px);"></div>
+<div id="_bp-start-gold2-title-pin" class="_breakpoint" style="top:calc(1690vh + 400px);"></div>
+<div id="_bp-start-gold2-menu-pin" class="_breakpoint" style="top:calc(1760vh + 400px);"></div>
+<div id="_bp-start-amalia-opacity-show" class="_breakpoint" style="top:calc(1950vh + 400px);"></div>
+    <!-- end breakpoints -->
+
+<section id="amalia" class="frame" style="background-image:url(img/logo.png)">
+</section>
+<section id="first" class="frame">
+    <img class="flower" src="img/f1_1.png"/>
+</section>
+
+
+<section id="news" class="frame wide news-block" style="display: none;">
+    <div class="news-container">
+        <div class="row">
+            <div class="medium-4 columns">
+                <h2>Новости</h2>
+            </div>
+            <div class="medium-8 columns">
+                <div class="row">
+                    
+                    <?php query_posts( array ( 'category_name' => 'news', 'posts_per_page' => 2 ) );?>
+                    <?php while ( have_posts() ) : the_post();?>
+                        <div class="medium-5 small-12 columns">
+                        <article class="post">
+                        <header>
+                            <a class="all-news-link" href="<?php the_permalink() ?>"><?php the_date();?></a>
+                        </header>
+                        <div class="post-body">
+                            <p>
+                              <b><?php the_title() ?></b>  
+                            </p>
+                            <p><?php the_content();?></p>
+                        </div>
+                        </article>
+                        </div>
+                    <?php endwhile;?>
+                    <?php wp_reset_query();?>
+                    <div class="medium-2 columns">
+                        <header>
+                            <a class="all-news-link" href="#">Все новости</a>
+                        </header>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<div id="red" class="frame">
+    <img class="flower" src="img/f2.png"/>
+</div>
+
+<section id="concept" class="frame">
+    <img class="flower" src="img/concept-eden.png"/>
+</section>
+<div id="concept-menu" class="frame">
+    <div class="row align-right">
+    <div class="medium-2 columns ">
+        <ul class="nav">
+            <li>
+                <h4><a href="#">Концепция</a></h4>
+                <p>Райского сада</p>
+            </li>
+            <li>
+                <h4><a href="#">Поэзия</a></h4>
+                <p>Амалии</p>
+            </li>
+        </ul>
+    </div>
+    </div>
+</div>
+
+<section id="book" class="frame">
+    <img class="flower" src="img/f3.png"/>
+</section>
+<section id="book-title" class="frame">
+    <img class="flower" src="img/book.png"/>
+</section>
+<section id="book-menu" class="frame">
+    <div class="row align-right">
+    <div class="medium-2 columns ">
+        <ul class="nav">
+            <li>
+                <h4><a href="#">Стихи</a></h4>
+            </li>
+        </ul>
+    </div>
+    </div>
+</section>
+
+<section id="gold" class="frame">
+    <img class="flower" src="img/f4.png"/>
+</section>
+
+<section id="white" class="frame">
+    <img class="flower" src="img/f5.png"/>
+</section>
+
+<section id="translations" class="frame">
+    <img class="flower" src="img/translations.png"/>
+</section>
+<div id="translations-menu" class="frame">
+    <div class="row align-right">
+    <div class="medium-2 columns ">
+        <ul class="nav">
+            <li>
+                <h4><a href="#">Online</a></h4>
+                <p>Радио Амалии</p>
+            </li>
+            <li>
+                <h4><a href="#">Смотреть</a></h4>
+                <p>Избранные выступления</p>
+            </li>
+        </ul>
+    </div>
+    </div>
+</div>
+
+<section id="gold2" class="frame">
+    <img class="flower" src="img/f6.png"/>
+</section>
+<section id="gold2-title" class="frame">
+    <img class="flower" src="img/f6-s.png"/>
+</section>
+<div id="gold2-menu" class="frame">
+    <div class="row align-right">
+    <div class="medium-2 columns ">
+        <ul class="nav">
+            <li>
+                <p>Драгоценные</p>
+                <h4><a href="#">Книги</a></h4>
+            </li>
+            <li>
+                <p>Важные</p>
+                <h4><a href="#">Ресурсы</a></h4>
+            </li>
+        </ul>
+    </div>
+    </div>
+</div>
+
+<section id="pink" class="frame">
+    <img class="flower" src="img/f7.png"/>
+</section>
+
+<section id="orange" class="frame">
+    <img class="flower" src="img/f8.png"/>
+</section>
+
+</div>
+
+
+
+
+<!-- <footer>
+  <div class="row align-center">
+    <div class="small-12 columns">
+      <ul class="menu">
+          <li><a href="#section-home">amaliya.life</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row align-center">
+    <div class="small-12 columns">
+      <ul class="menu menu-social">
+          <li><a href="https://www.facebook.com/edengardenconcept" target="_blank"><img src="img/icon-facebook.png"/></a></li>
+          <li><a href="#"><img src="img/icon-instagram.png"/></a></li>
+          <li><a href="#"><img src="img/icon-twitter.png"/></a></li>
+      </ul>
+    </div>
+  </div>
+</footer> -->
+
+
+
+
+</div>
+
+
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+    
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.velocity.min.js"></script>
+    
+    
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/ScrollToPlugin.min.js"></script>
+    
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.3.4/mobile-detect.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
+    <script src="js/app.js"></script>
+    
+  </body>
+</html>
+
