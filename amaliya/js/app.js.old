@@ -1,0 +1,274 @@
+var md = new MobileDetect(window.navigator.userAgent);
+
+var _mobileMode = (md.phone() != null || md.tablet() != null);
+
+
+var debug = true;
+
+function smoothScroll() {
+	var $window = $(window)
+	var scrollTime = 2;
+	var scrollDistance = $(window).innerHeight(); //1000;
+	$window.on("mousewheel", function(event) {
+		event.preventDefault();
+		var delta = event.originalEvent.wheelDelta / 120 || -event.originalEvent.detail / 3;
+		var scrollTop = $window.scrollTop();
+		var finalScroll = scrollTop - parseInt(delta * scrollDistance); // * 3;
+
+		TweenMax.to($window, scrollTime, {
+			scrollTo: {
+				y: finalScroll,
+				autoKill: true
+			},
+			ease: Power1.easeOut,
+			overwrite: 5
+		});
+	});
+}
+
+$(function() {
+	//smoothScroll();
+});
+
+if (debug) {
+	$("body").addClass("debug");
+}
+
+$("body").on("click", ".link-anchor", function() {
+	var self = $(this);
+	var id = self.attr("href");
+	var target = $(id);
+	if(target.length == 0) return false;
+	var whh = window.innerHeight / 2;
+
+	var offsetTop = offsetTop = target.offset().top - whh; //0;
+
+	switch (id) {
+		case "#concept-eden":
+			offsetTop = target.offset().top - whh;
+			break;
+		case "#section-book":
+			offsetTop = target.offset().top - whh;
+			break;
+		case "#section-we":
+			offsetTop = target.offset().top - whh;
+			break;
+	}
+	$("html,body").animate({
+		scrollTop: offsetTop
+	}, '1000');
+	return false;
+});
+var controller;
+
+function initStream() {
+	controller = new ScrollMagic.Controller();
+
+
+	var scene = new ScrollMagic
+		.Scene({
+			triggerElement: "#_bp-1",
+			duration: "150%", //50%  - fade out 1st flower
+			reverse: (!_mobileMode)
+		})
+		.setTween("#amalia", 1, {
+			opacity: 0
+		})
+		.addTo(controller);
+
+
+
+	if (!_mobileMode) {
+
+		var scene = new ScrollMagic.Scene({
+				triggerElement: "#_bp-1-1",
+				duration: "150%" // 
+			})
+			.setPin("#concept-eden")
+			.addTo(controller);
+
+
+		var scene = new ScrollMagic.Scene({
+				triggerElement: "#_bp-1-1-1-1-2",
+				duration: "80%"
+			})
+			.setPin("#frame-circle-2")
+			.addTo(controller);
+
+		var scene = new ScrollMagic
+			.Scene({
+				triggerElement: "#_bp-2-1",
+				duration: "300%"
+			})
+			.setTween("#frame-circle-2", 1, {
+				top: "-50%"
+			})
+			.addTo(controller);
+
+		var scene = new ScrollMagic
+			.Scene({
+				triggerElement: "#_bp-1-2",
+				duration: "120%"
+			})
+			.setTween("#frame-circle-3-title", 1, {
+				bottom: 85
+			})
+			.addTo(controller);
+
+		var scene = new ScrollMagic.Scene({
+				triggerElement: "#_bp-2-2",
+				duration: "150%"
+			})
+			.setPin("#frame-circle-3")
+			.addTo(controller);
+
+		var scene = new ScrollMagic.Scene({
+				triggerElement: "#_bp-2-1-1",
+				duration: "200%"
+			})
+			.setTween("#frame-circle-4", 1, {
+				marginTop: -200
+			})
+			.addTo(controller);
+
+		var scene = new ScrollMagic.Scene({
+				triggerElement: "#_bp-2-3",
+				duration: "70%"
+			})
+			.setTween("#we-title", 1, {
+				bottom: 320
+			})
+			.addTo(controller);
+
+		var scene = new ScrollMagic.Scene({
+				triggerElement: "#_bp-3-1",
+				duration: "150%"
+			})
+			.setPin("#we")
+			.addTo(controller);
+
+
+		var scene = new ScrollMagic.Scene({
+				triggerElement: "#_bp-2-2-1",
+				duration: "250%"
+			})
+			.setTween("#frame-circle-5", 1, {
+				top: -1442
+			})
+			.addTo(controller);
+
+		var scene = new ScrollMagic.Scene({
+				triggerElement: "#_bp-4-1",
+				duration: "70%"
+			})
+			.setTween("#library-title", 1, {
+				top: -300
+			})
+			.addTo(controller);
+	}
+
+
+}
+
+$(document).on("ready scroll resize", function(e) {
+	var w = $(window);
+	var self = $(this);
+	var amalia = $("#amalia");
+	var links = $(".link-anchor");
+	links.removeClass("active");
+
+	var scrollTop = self.scrollTop();
+	var bottom = w.height() + scrollTop;
+
+	var h = w.innerHeight();
+	var width = w.innerWidth();
+
+	$("#stream").css("width", width + 'px');
+
+	var anchors = [];
+	for (var i = 0; i < links.length; i++) {
+		var link = $(links[i]);
+
+		var anchor = $(link.attr("href"));
+		var offsetTop = parseFloat(anchor.css("top"));
+
+		if (scrollTop <= offsetTop && offsetTop < bottom) {
+			link.addClass("active");
+			break;
+		}
+	}
+	if (_mobileMode && scrollTop <= 20) {
+		amalia.animate({
+			opacity: 1
+		});
+	}
+});
+
+function perc(perc) {
+	var w = $(window);
+	var h = w.innerHeight();
+
+	var result = (h / 100) * perc;
+
+	return result;
+}
+$(window).on("load resize", function() {
+	var w = $(window);
+	var h = w.innerHeight();
+	var eden = $("#concept-eden");
+	var we = $("#we");
+
+	eden.css({
+		'margin-top': (h + 64) + 'px'
+	});
+	we.css({
+		'top': perc(380) + 1488 + 'px'
+	})
+
+	var bp11 = $("#_bp-1-1");
+	var bp12 = $("#_bp-1-2");
+
+	var bp21 = $("#_bp-2-1");
+
+	var bp211 = $("#_bp-2-1-1");
+	var bp221 = $("#_bp-2-2-1");
+
+	var bp23 = $("#_bp-2-3");
+
+	var bp31 = $("#_bp-3-1");
+
+	if (md.phone()) $("html").addClass("is-phone");
+	if (md.tablet()) $("html").addClass("is-tablet");
+
+	if (_mobileMode) {
+		$("html").addClass("is-mobile");
+	}
+	else {
+		bp11.css({
+			'top': perc(200) + 128 + 'px'
+		});
+
+		bp21.css({
+			'top': perc(200) + 1028 + 'px'
+		});
+
+		bp23.css({
+			'top': perc(570) + 1100 + 'px'
+		});
+
+		bp31.css({
+			'top': perc(570) + 1316 + 'px'
+		});
+
+		bp221.css({
+			'top': perc(200) + 3000 + 'px'
+		});
+	}
+	if (controller != undefined) {
+		controller.destroy(true);
+	}
+	initStream();
+});
+$(window).on("load", function() {
+	$(document).foundation();
+});
